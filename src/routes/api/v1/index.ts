@@ -6,7 +6,7 @@ import matchesRoutes from './control.routes';
 
 const router = express.Router();
 
-router.use('/', controlRoutes);
+router.use('/control', controlRoutes);
 router.use('/matches', matchesRoutes);
 router.use('/prediction', predictionRoutes);
 router.use('/country', countryRoutes);
