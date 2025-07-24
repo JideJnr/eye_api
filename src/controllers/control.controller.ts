@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { sendCommand } from "../botClient";
 
 
-export const startEaglesEye = async ( res: Response) => {
+export const startEaglesEye = async (req:Request, res: Response) => {
   try {
     {/*const result = await sendCommand('start');
     res.json(result);*/}
@@ -15,7 +15,7 @@ export const startEaglesEye = async ( res: Response) => {
   }
 };
 
-export const stopEaglesEye = async ( res: Response) => {
+export const stopEaglesEye = async (req:Request, res: Response) => {
   try {
     const result = await sendCommand('stop');
     res.json(result);
@@ -28,7 +28,7 @@ export const stopEaglesEye = async ( res: Response) => {
   }
 };
 
-export const checkEyeStatus = async ( res: Response) => {
+export const checkEyeStatus = async (req:Request, res: Response) => {
   try {
     const result = await sendCommand('status');
     res.json(result);
@@ -41,7 +41,7 @@ export const checkEyeStatus = async ( res: Response) => {
   }
 };
 
-export const getAllEngines = async ( res: Response) => {
+export const getAllEngines = async (req:Request, res: Response) => {
   try {
     const result = await sendCommand('all');
     res.json(result);
