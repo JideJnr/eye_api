@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { sendCommand } from "../botClient";
 
-
 export const startEaglesEye = async (req:Request, res: Response) => {
   try {
     const result = await sendCommand('start');
