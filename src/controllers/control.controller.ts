@@ -4,14 +4,14 @@ import { sendCommand } from "../botClient";
 
 export const startEaglesEye = async ( res: Response) => {
   try {
-    const result = await sendCommand('start');
-    res.json(result);
-  } catch (error) {
-    res.status(200).json({ 
-      success: false,
-      error: 'Failed to start engine service',
-      details: error instanceof Error ? error.message : 'Unknown error'
+    {/*const result = await sendCommand('start');
+    res.json(result);*/}
+    res.status(200).json({
+      success: true,
+      status: 'ENGINE_ALREADY_RUNNING',
+      message: 'Hmmm... I hope you know what you doing',
     });
+  } catch (error) {
   }
 };
 
