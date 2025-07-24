@@ -34,7 +34,7 @@ router.post('/start', startEaglesEye);
  *       200:
  *         description: Engine stopped successfully
  */
-router.post('/stop', stopEaglesEye);
+router.get('/stop', stopEaglesEye);
 
 /**
  * @swagger
