@@ -27,15 +27,26 @@ router.post('/start', startEaglesEye);
 /**
  * @swagger
  * /control/stop:
- *   get:
+ *   post:
  *     summary: Stop the entire engine
  *     tags: [Bot Control]
  *     responses:
  *       200:
  *         description: Engine stopped successfully
  */
-router.get('/stop', stopEaglesEye);
+router.post('/stop', stopEaglesEye);
 
+/**
+ * @swagger
+ * /control/status:
+ *   get:
+ *     summary: Get eagle eye status
+ *     tags: [Bot Control]
+ *     responses:
+ *      200:
+ *        description: Engine status fetched successfully
+ *    
+ */
 router.get('/status', checkEyeStatus);
 
 /**
@@ -75,7 +86,7 @@ router.post('/start/id', startEngineById);
 /**
  * @swagger
  * /control/stop/id:
- *   get:
+ *   post:
  *     summary: Stop a specific bot by ID
  *     tags: [Bot Control]
  *     parameters:
@@ -89,7 +100,7 @@ router.post('/start/id', startEngineById);
  *       200:
  *         description: Bot stopped successfully
  */
-router.get('/stop/id', stopEngineById);
+router.post('/stop/id', stopEngineById);
 
 /**
  * @swagger
