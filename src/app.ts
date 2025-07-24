@@ -31,7 +31,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'https://api-football-cy7l.onrender.com',
+        url: 'https://eye-api-abkr.onrender.com',
         description: 'Production',
       }
     ],
