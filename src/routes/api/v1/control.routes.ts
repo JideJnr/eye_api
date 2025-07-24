@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkEngineStatus, getAllEngines, startEngineById, startEaglesEye, stopEngineById, stopEaglesEye } from '../../../controllers/control.controller';
+import { checkEngineStatus, getAllEngines, startEngineById, startEaglesEye, stopEngineById, stopEaglesEye, checkEyeStatus } from '../../../controllers/control.controller';
 
 const router = express.Router();
 
@@ -35,6 +35,8 @@ router.post('/start', startEaglesEye);
  *         description: Engine stopped successfully
  */
 router.get('/stop', stopEaglesEye);
+
+router.get('/status', checkEyeStatus);
 
 /**
  * @swagger
