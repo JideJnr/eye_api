@@ -11,7 +11,7 @@ app.use(cors({
   origin: [
     'http://localhost:8100',
     'https://editor.swagger.io',
-    'https://api-football-cy7l.onrender.com',
+    'https://eye-api-abkr.onrender.com',
     'http://localhost:5173'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
