@@ -6,6 +6,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const analytics_controller_1 = require("../../../controllers/analytics.controller");
 const router = express_1.default.Router();
+/**
+ * @swagger
+ * /analytics/overview:
+ *   post:
+ *     summary: Get general overview analytics
+ *     tags: [Analytics]
+ *     responses:
+ *       200:
+ *         description: Overview data returned successfully
+ *       500:
+ *         description: Server error
+ */
 router.post('/overview', analytics_controller_1.getOverview);
+/**
+ * @swagger
+ * /analytics/getmetrics:
+ *   get:
+ *     summary: Get bot performance metrics
+ *     tags: [Analytics]
+ *     responses:
+ *       200:
+ *         description: Bot metrics retrieved successfully
+ *       500:
+ *         description: Server error
+ */
 router.get('/getmetrics', analytics_controller_1.getBotMetrics);
 exports.default = router;

@@ -1,5 +1,5 @@
 import express from 'express';
-import { checkEngineStatus, getAllEngine, startEngineById, startEye, stopEngineById, stopEye } from '../../../controllers/control.controller';
+import { checkEngineStatus, getAllEngines, startEngineById, startEaglesEye, stopEngineById, stopEaglesEye } from '../../../controllers/control.controller';
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ const router = express.Router();
  *       500:
  *         description: Failed to start engine
  */
-router.post('/start', startEye);
+router.post('/start', startEaglesEye);
 
 /**
  * @swagger
@@ -34,7 +34,7 @@ router.post('/start', startEye);
  *       200:
  *         description: Engine stopped successfully
  */
-router.get('/stop', stopEye);
+router.get('/stop', stopEaglesEye);
 
 /**
  * @swagger
@@ -46,7 +46,7 @@ router.get('/stop', stopEye);
  *       200:
  *         description: List of bots returned
  */
-router.get('/all', getAllEngine);
+router.get('/all', getAllEngines);
 
 /**
  * @swagger
