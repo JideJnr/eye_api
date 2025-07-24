@@ -46,9 +46,9 @@ export const getAllEngines = async (req:Request, res: Response) => {
     const result = await sendCommand('all');
     res.json(result);
   } catch (error) {
-    res.status(201).json({
+    res.status(200).json({
       success: false, 
-      error: 'Failed to start engine service',
+      error: 'Error Communicating with bot',
       details: error instanceof Error ? error.message : 'Unknown error'
     });
   }
