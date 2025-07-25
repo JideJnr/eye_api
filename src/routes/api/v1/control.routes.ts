@@ -81,7 +81,7 @@ router.get('/get/all', getAllEngines);
  *       200:
  *         description: Bot started successfully
  */
-router.post('/start/id', startEngineById);
+router.post('/start/:id', startEngineById);
 
 /**
  * @swagger
@@ -119,6 +119,6 @@ router.post('/stop/id', stopEngineById);
  *       200:
  *         description: Bot status returned
  */
-router.get('/status/id', checkEngineStatus);
+router.get('/status/:id', checkEngineStatus);
 
 export default router;
