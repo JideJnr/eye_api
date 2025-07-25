@@ -42,12 +42,12 @@ import { sendGetCommand, sendPostCommand } from "../botClient";
 
   export const getAllEngines = async (req:Request, res: Response) => {
     try {
-      const result = await sendPostCommand('get/all');
+      const result = await sendGetCommand('get/all');
       res.json(result);
     } catch (error) {
       res.status(200).json({
         success: false, 
-        error: 'Failed to start engine service',
+        error: 'Failed to communicate with engine service',
         details: error instanceof Error ? error.message : 'Unknown error'
       });
     }
