@@ -12,7 +12,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /control/start:
+ * /start:
  *   post:
  *     summary: Start the entire engine
  *     tags: [Bot Control]
@@ -26,7 +26,7 @@ router.post('/start', startEaglesEye);
 
 /**
  * @swagger
- * /control/stop:
+ * /stop:
  *   post:
  *     summary: Stop the entire engine
  *     tags: [Bot Control]
@@ -38,7 +38,7 @@ router.post('/stop', stopEaglesEye);
 
 /**
  * @swagger
- * /control/status:
+ * /status:
  *   get:
  *     summary: Get eagle eye status
  *     tags: [Bot Control]
@@ -51,7 +51,7 @@ router.get('/status', checkEyeStatus);
 
 /**
  * @swagger
- * /control/all:
+ * /get/all:
  *   get:
  *     summary: Get all available bots
  *     tags: [Bot Control]
@@ -59,11 +59,11 @@ router.get('/status', checkEyeStatus);
  *       200:
  *         description: List of bots returned
  */
-router.get('/all', getAllEngines);
+router.get('/get/all', getAllEngines);
 
 /**
  * @swagger
- * /control/start/id:
+ * /start/id:
  *   post:
  *     summary: Start a specific bot by ID
  *     tags: [Bot Control]
@@ -85,7 +85,7 @@ router.post('/start/id', startEngineById);
 
 /**
  * @swagger
- * /control/stop/id:
+ * /stop/id:
  *   post:
  *     summary: Stop a specific bot by ID
  *     tags: [Bot Control]
@@ -104,7 +104,7 @@ router.post('/stop/id', stopEngineById);
 
 /**
  * @swagger
- * /control/status/id:
+ * /status/id:
  *   get:
  *     summary: Get status of a specific bot
  *     tags: [Bot Control]
