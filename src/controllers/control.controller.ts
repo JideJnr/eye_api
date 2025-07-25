@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { sendCommand } from "../botClient";
+import { sendGetCommand, sendPostCommand } from "../botClient";
 
   export const startEaglesEye = async (req:Request, res: Response) => {
     try {
-      const result = await sendCommand('start');
+      const result = await sendPostCommand('start');
       res.json(result)
     } catch (error) {
       res.status(200).json({
@@ -16,7 +16,7 @@ import { sendCommand } from "../botClient";
 
   export const stopEaglesEye = async (req:Request, res: Response) => {
     try {
-      const result = await sendCommand('stop');
+      const result = await sendPostCommand('stop');
       res.json(result);
     } catch (error) {
       res.status(200).json({
@@ -29,7 +29,7 @@ import { sendCommand } from "../botClient";
 
   export const checkEyeStatus = async (req:Request, res: Response) => {
     try {
-      const result = await sendCommand('status');
+      const result = await sendGetCommand('status');
       res.json(result);
     } catch (error) {
       res.status(200).json({
@@ -42,7 +42,7 @@ import { sendCommand } from "../botClient";
 
   export const getAllEngines = async (req:Request, res: Response) => {
     try {
-      const result = await sendCommand('all');
+      const result = await sendGetCommand('get/all');
       res.json(result);
     } catch (error) {
       res.status(200).json({
@@ -57,13 +57,13 @@ import { sendCommand } from "../botClient";
     try {
       const { id } = req.params;
       if (!id) {
-        return res.status(400).json({ 
+        return res.status(200).json({ 
           success: false, 
           error: 'Engine ID is required',
           details: 'No engine ID provided'
         });
       }
-      const result = await sendCommand(`start/${id}`);
+      const result = await sendPostCommand(`start/${id}`);
       res.json(result);
     } catch (error) {
       res.status(200).json({ 
@@ -78,13 +78,13 @@ import { sendCommand } from "../botClient";
     try {
       const { id } = req.params;
       if (!id) {
-        return res.status(400).json({ 
+        return res.status(200).json({ 
           success: false, 
           error: 'Engine ID is required',
           details: 'No engine ID provided'
         });
       }
-      const result = await sendCommand(`stop/${id}`);
+      const result = await sendPostCommand(`stop/${id}`);
       res.json(result);
     } catch (error) {
       res.status(200).json({ 
@@ -99,16 +99,16 @@ import { sendCommand } from "../botClient";
     try {
       const { id } = req.params;
       if (!id) {
-        return res.status(400).json({ 
+        return res.status(200).json({ 
           success: false, 
           error: 'Engine ID is required',
           details: 'No engine ID provided'
         });
       }
-      const result = await sendCommand(`status/${id}`);
+      const result = await sendPostCommand(`status/${id}`);
       res.json(result);
     } catch (error) {
-      res.status(201).json({ 
+      res.status(200).json({ 
         error: 'Failed to start engine service',
         details: error instanceof Error ? error.message : 'Unknown error'
       });

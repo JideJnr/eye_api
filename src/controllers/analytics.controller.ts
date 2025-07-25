@@ -1,6 +1,6 @@
 import {  Response , Request} from "express";
 
-export const getOverview = async ( res: Response) => {
+export const getOverview = async ( req: Request, res: Response) => {
   try {
      res.status(201).json({ 
       success: true,
@@ -16,7 +16,7 @@ export const getOverview = async ( res: Response) => {
   }
 };
 
-export const getBotMetrics = async ( res: Response) => {
+export const getBotMetrics = async ( req: Request, res: Response) => {
   try {
      res.status(201).json({ 
       success: true,

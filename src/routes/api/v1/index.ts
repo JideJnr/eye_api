@@ -5,7 +5,7 @@ import authRoutes from './auth.routes';
 
 const router = express.Router();
 
-router.use('/control', controlRoutes);
+router.use('/', controlRoutes);
 router.use('/auth', authRoutes);
 router.use('/analytics', analyticsRoutes);
 
