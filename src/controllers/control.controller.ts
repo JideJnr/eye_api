@@ -105,7 +105,7 @@ import { sendGetCommand, sendPostCommand } from "../botClient";
           details: 'No engine ID provided'
         });
       }
-      const result = await sendGetCommand(`status/${id}`);
+      const result = await sendPostCommand(`status/${id}`);
       res.json(result);
     } catch (error) {
       res.status(200).json({ 
