@@ -68,7 +68,7 @@ import { sendGetCommand, sendPostCommand } from "../botClient";
     } catch (error) {
       res.status(200).json({ 
         success: false,
-        error: 'Failed to stop engine service',
+        error: 'Failed to stop engine service ',
         details: error instanceof Error ? error.message : 'Unknown error'
       });
     }
