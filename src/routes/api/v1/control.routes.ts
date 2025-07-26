@@ -100,7 +100,7 @@ router.post('/start/:id', startEngineById);
  *       200:
  *         description: Bot stopped successfully
  */
-router.post('/stop/id', stopEngineById);
+router.post('/stop/:id', stopEngineById);
 
 /**
  * @swagger
